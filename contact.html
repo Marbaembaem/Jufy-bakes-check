@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section>
+  <div class="container"></div>
+  <h2>Contact Us</h2>
+  <p>Have a question or want to work togrther? Send a message!</p>
+
+  <div class="contact- wrapper">
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your name" required>
+       <input type="email" id="email" placeholder="Your email" required>
+        <textarea type="message" rows="5" placeholder="Your message" required></textarea>
+        <button class="submit">Send Message</button>
+        <div class="success-message" id="succesMessage">Message sent successfully!</div>
+    </form>
+  <div class="info">
+    <h3>Contact info</h3>
+    <p>ifyben818@gmail.com</p>
+    <p>Ogun State, Nigeria</p>
+
+    <h3>Follow Me On</h3>
+    <p>Tiktok @<a href="#">jufybakes</a></p>
+    <p>Instagram @<a href="#">jufy_bakes</a></p>
+    <p>Facebook @<a href="#">jufybakes</a></p>
+    <p>Whatsapp <a href="#">09035879992</a></p>
+  </div>
+  </div>
+</section>
+
+<script>
+const form = document.getElementById('contactForm');
+const successMessage = document.getElementById('successMessage')
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  //get values
+  const name = document.getElementById('name').value;
+ const email = document.getElementById('email').value;
+ const message = document.getElementById('message').value;
+ //simple validation
+ if (name && email && message){
+  successMessage.style.display = 'block';
+  //clearr form
+  form.reset();
+
+  //hide message after 3 seconds
+  setTimeout(() =>{
+    successMessage.style.display = 'none';
+  },3000);
+ }
+});
+
+</script>
+</body>
+</html>
